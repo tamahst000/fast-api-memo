@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <title>Simple Memo Application</title>
+  </head>
+  <body>
+    <nav class="nav navbar-dark bg-dark">
+      <div class="container d-flex justify-content-end">
+        <a class="nav-link text-light active" href="/">Home</a>
+        <a class="nav-link text-light" href="/signup">Signup</a>
+      </div>
+    </nav>
+    <div style="display: flex; flex-direction: column; min-height: 80vh">
+      <div class="container">
+        <br />
+        <div class="row">
+          <div class="col-md-10">
+            <h2>Login Form</h2>
+          </div>
+        </div>
+        <hr />
+        <h3>{% for c in complete %}{{ c }}<br />{% endfor %}</h3>
+        <form action="/certification" method="post">
+          <br />
+          <p>
+            ユーザ名<br />
+            <input
+              type="text"
+              size="30"
+              maxlength="20"
+              name="username"
+              value="{{username}}"
+              placeholder="4文字以上20文字以下の半角英数字"
+            />
+          </p>
+          <br />
+          <p>
+            パスワード<br />
+            <input
+              type="password"
+              size="30"
+              maxlength="20"
+              name="password"
+              placeholder="6文字以上20文字以下の半角英数字"
+            />
+          </p>
+          <br /><br />
+          <button type="submit" class="btn btn-dark">ログイン</button>
+        </form>
+        <p class="text-danger">{% for e in error %}{{ e }}<br />{% endfor %}</p>
+      </div>
+    </div>
+    <br />
+    <footer class="bg-dark">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="mx-auto text-white">
+            <br />
+            <p class="text-center text-white">
+              <a
+                href="https://github.com/tamahst000/fast-api-memo"
+                class="text-white"
+              >
+                https://github.com/tamahst000/fast-api-memo
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

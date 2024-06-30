@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <title>Simple Memo Application</title>
+  </head>
+  <body>
+    <nav class="nav navbar-dark bg-dark">
+      <div class="container d-flex justify-content-end">
+        <a class="nav-link text-light active" href="/">Home</a>
+        <a class="nav-link text-light" href="/login">Login</a>
+        <a class="nav-link text-light" href="/signup">Signup</a>
+      </div>
+    </nav>
+    <div style="display: flex; flex-direction: column; min-height: 80vh">
+      <div class="container">
+        <br />
+        <div class="row">
+          <div class="col-md-10">
+            <h1>Simple Memo</h1>
+          </div>
+        </div>
+
+        <hr />
+        <p>☆「Login」よりユーザ名とパスワードを入力してログインできます</p>
+        <p>☆「Signup」より新規アカウントを作成できます</p>
+        <hr />
+        <p>
+          ☆
+          お試しでアプリケーションを動かしたい場合は、ゲストアカウントでログインできます
+        </p>
+        <ul>
+          <p>ゲストアカウント:</p>
+          <ul>
+            <li>ユーザ名：fastapi</li>
+            <li>パスワード：fastapi</li>
+          </ul>
+        </ul>
+        <hr />
+        <p class="text-danger">
+          ※サーバは約15分ごとにリブートされるため、作成したアカウントおよびメモの内容は永続的ではありません。
+        </p>
+      </div>
+    </div>
+
+    <br />
+    <footer class="bg-dark">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="mx-auto text-white">
+            <br />
+            <p class="text-center text-white">
+              <a
+                href="https://github.com/tamahst000/fast-api-memo"
+                class="text-white"
+              >
+                https://github.com/tamahst000/fast-api-memo
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <title>Simple Memo Application</title>
+    <script src="/js/script.js"></script>
+  </head>
+  <body>
+    <nav class="nav navbar-dark bg-dark">
+      <div class="container d-flex justify-content-end">
+        <a
+          class="nav-link text-light"
+          href="/"
+          onclick="return confirmLogout();"
+          >Logout</a
+        >
+      </div>
+    </nav>
+    <div style="display: flex; flex-direction: column; min-height: 80vh">
+      <div class="container">
+        <br />
+        <div class="row">
+          <div class="col-md-10">
+            <h2>{{ task.id }}. メモの編集</h2>
+          </div>
+          <div class="col-md-2">
+            <a href="/{{user.username}}/admin" class="btn btn-dark">もどる</a>
+          </div>
+        </div>
+        <hr />
+        <form
+          id="memoForm"
+          action="/{{user.username}}/update/{{ task.id }}"
+          method="post"
+          onsubmit="return validateForm()"
+        >
+          <textarea
+            id="memoContent"
+            name="content"
+            style="width: 100%; height: 500px; box-sizing: border-box"
+            placeholder="こちらにテキストを入力してください。"
+            oninput="enableSubmitButton()"
+          >
+{{task.content}}</textarea
+          >
+          <br /><br />
+          <button type="submit" id="submitButton" class="btn btn-dark" disabled>
+            メモを更新してもどる
+          </button>
+        </form>
+        <br />
+      </div>
+    </div>
+    <br />
+    <footer class="bg-dark">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="mx-auto text-white">
+            <br />
+            <p class="text-center text-white">
+              <a
+                href="https://github.com/tamahst000/fast-api-memo"
+                class="text-white"
+              >
+                https://github.com/tamahst000/fast-api-memo
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
